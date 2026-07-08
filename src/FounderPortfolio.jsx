@@ -4,9 +4,29 @@ import { Moon, Sun } from "lucide-react";
 const navItems = [
   { id: "about", label: "About" },
   { id: "background", label: "Background" },
+  { id: "skills", label: "Skills" },
   { id: "work", label: "Work" },
   { id: "timeline", label: "Timeline" },
   { id: "contact", label: "Contact" },
+];
+
+const skills = [
+  {
+    category: "Product & Planning",
+    items: ["문제 구조화", "서비스 기획", "사용자 검증", "워크플로우 설계"],
+  },
+  {
+    category: "Growth & Marketing",
+    items: ["커뮤니티 그로스", "SNS·UGC 운영", "콘텐츠 기획"],
+  },
+  {
+    category: "Global Business",
+    items: ["영어 (한미연합훈련 통역)", "해외 영업", "다문화 협업"],
+  },
+  {
+    category: "Tools",
+    items: ["Notion", "Figma", "데이터 분석 기초"],
+  },
 ];
 
 const education = "한양대학교 국제학부 재학";
@@ -56,6 +76,9 @@ const projects = [
     href: "https://stechpro.ai",
     description:
       "고가의 분석 솔루션에 접근하기 어려운 미식축구 팀들을 위해, Computer Vision 기반 미식축구 분석 시스템을 구축했습니다.",
+    role: "창업자·대표 — 프로덕트 기획, 팀 리딩, 사용자 검증 주도",
+    outcome:
+      "정부지원사업 창업중심대학 생애 최초 선정, 글로벌 챌린저 인 실리콘밸리 참가자 선정",
     focus: [
       "American Football",
       "Player Tracking",
@@ -68,6 +91,7 @@ const projects = [
     title: "Monocular Player Tracking Research",
     description:
       "“CBY: Monocular Player Tracking in American Football via Domain-Adapted Detection and Vision-Language Labeling” 논문의 2저자로 참여했습니다.",
+    role: "2저자 — 도메인 데이터 구축 및 실험 참여",
     focus: [
       "Computer Vision",
       "Sports Tracking",
@@ -80,6 +104,7 @@ const projects = [
     title: "지식재산권 도메인의 정보 비대칭",
     description:
       "특허·상표·저작권 영역에서 전문가와 창작자 사이에 발생하는 정보 격차를 줄이기 위한 의사결정 인프라를 탐구하고 있습니다.",
+    role: "개인 리서치 — 한국연구재단 특허 프로젝트 참여",
     focus: [
       "IP Intelligence",
       "Information Architecture",
@@ -92,6 +117,8 @@ const projects = [
     title: "탄소배출권 신뢰 인프라",
     description:
       "탄소배출권의 이중 사용 및 신뢰성 문제를 해결하기 위한 블록체인 기반 환경 시스템 프로젝트에 참여했습니다.",
+    role: "마케팅 파트 및 해외 영업",
+    outcome: "블록체인 커뮤니티 7,500 팔로워 성장",
     focus: ["Climate Tech", "Carbon Credits", "Blockchain Infrastructure", "ESG Systems"],
   },
 ];
@@ -202,11 +229,21 @@ export default function FounderPortfolio() {
               이상원 <span className="text-neutral-400 dark:text-neutral-500">Josh Lee</span>
             </h1>
             <p className="mt-4 text-base text-neutral-500 dark:text-neutral-400">
-              Founder · Sports AI · Computer Vision · Systems Design
+              Service Planning · Global Business · Growth Marketing
             </p>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-800 dark:text-neutral-200">
-              글로벌 감각과 실행력을 기반으로 복잡한 문제를 구조로 해체하고, 실행 가능한
-              시스템을 만드는 설계자입니다.
+              창업, 리서치, 글로벌 영업을 오가며 문제 정의부터 실행과 검증까지 직접
+              만들어 본 비즈니스 제너럴리스트입니다.
+            </p>
+            <p className="mt-6 text-base">
+              <a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-white"
+              >
+                Resume (PDF)
+              </a>
             </p>
             <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-neutral-200 pt-8 dark:border-neutral-800">
               {stats.map(([value, label]) => (
@@ -241,8 +278,8 @@ export default function FounderPortfolio() {
                 미식축구 분석의 접근성을 확장하는 AI 시스템을 만들었습니다.
               </p>
               <p>
-                Computer Vision, workflow automation, data infrastructure를 기반으로, 복잡한
-                조직과 시스템이 더 효율적으로 작동할 수 있는 구조를 탐구하고 있습니다.
+                이 과정에서 쌓은 문제 정의, 실행, 검증의 경험을 IT 스타트업의 서비스
+                기획·그로스·글로벌 비즈니스 문제에 적용하고 싶습니다.
               </p>
             </div>
 
@@ -307,10 +344,25 @@ export default function FounderPortfolio() {
             </div>
           </Section>
 
+          <Section id="skills" title="Skills">
+            <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+              {skills.map((group) => (
+                <div key={group.category}>
+                  <h3 className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                    {group.category}
+                  </h3>
+                  <p className="mt-3 text-base leading-7 text-neutral-800 dark:text-neutral-200">
+                    {group.items.join(", ")}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
           <Section
             id="work"
             title="Work"
-            intro="기술적 호기심을 실제 문제 구조에 연결하고, 리서치와 제품 사이에서 작동하는 시스템을 설계합니다."
+            intro="아이디어에 그치지 않고 직접 실행해 결과를 만든 프로젝트들입니다. 각 프로젝트에서 맡은 역할과 성과를 함께 정리했습니다."
           >
             <div className="divide-y divide-neutral-200 dark:divide-neutral-800">
               {projects.map((project) => (
@@ -337,6 +389,26 @@ export default function FounderPortfolio() {
                   <p className="mt-3 max-w-2xl text-[15px] leading-7 text-neutral-600 dark:text-neutral-400">
                     {project.description}
                   </p>
+                  <dl className="mt-4 space-y-1.5 text-[15px] leading-7">
+                    {project.role && (
+                      <div className="flex gap-3">
+                        <dt className="w-10 shrink-0 text-neutral-400 dark:text-neutral-500">
+                          역할
+                        </dt>
+                        <dd className="text-neutral-700 dark:text-neutral-300">{project.role}</dd>
+                      </div>
+                    )}
+                    {project.outcome && (
+                      <div className="flex gap-3">
+                        <dt className="w-10 shrink-0 text-neutral-400 dark:text-neutral-500">
+                          성과
+                        </dt>
+                        <dd className="text-neutral-700 dark:text-neutral-300">
+                          {project.outcome}
+                        </dd>
+                      </div>
+                    )}
+                  </dl>
                   <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-500">
                     {project.focus.join(" · ")}
                   </p>
@@ -365,7 +437,7 @@ export default function FounderPortfolio() {
           <Section
             id="contact"
             title="Contact"
-            intro="복잡한 문제를 구조적으로 해결하는 일, 그리고 새로운 시스템을 만드는 사람들과의 협업에 관심이 있습니다."
+            intro="채용, 포지션 제안, 커피챗 모두 환영합니다. 이메일을 주시면 하루 안에 답장드립니다."
           >
             <ul className="space-y-3">
               {contactLinks.map(([label, text, href]) => (
