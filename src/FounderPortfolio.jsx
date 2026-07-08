@@ -12,7 +12,7 @@ const navItems = [
 const education = "한양대학교 국제학부 재학";
 
 const roles = [
-  ["現", "대학 연합 창업동아리 HVC 회장"],
+  ["前", "한양대학교 창업동아리 HVC 회장"],
   ["前", "스포츠 테크 스타트업 STECH 대표"],
   ["前", "ESG 블록체인 스타트업 마케팅 파트 및 해외 영업"],
   ["前", "대학 미식축구 크리에이터 UGC 운영자"],
@@ -21,7 +21,6 @@ const roles = [
 
 const currentFocus = [
   "지식재산권 도메인에서의 정보 비대칭",
-  "보험시장에서의 정보 비대칭",
   "고협업 환경에서의 워크플로우 자동화",
 ];
 
@@ -53,15 +52,15 @@ const stats = [
 const projects = [
   {
     status: "Past Work",
-    title: "STECH — 스포츠 데이터 접근성",
+    title: "STECH — 미식축구 데이터 접근성",
     href: "https://stechpro.ai",
     description:
-      "고가의 분석 솔루션에 접근하기 어려운 팀들을 위해, Computer Vision 기반 스포츠 분석 시스템을 구축했습니다.",
+      "고가의 분석 솔루션에 접근하기 어려운 미식축구 팀들을 위해, Computer Vision 기반 미식축구 분석 시스템을 구축했습니다.",
     focus: [
+      "American Football",
       "Player Tracking",
       "Object Detection",
       "AI-assisted Coaching Workflow",
-      "Sports Intelligence",
     ],
   },
   {
@@ -86,28 +85,6 @@ const projects = [
       "Information Architecture",
       "Decision Support",
       "Legal Workflow",
-    ],
-  },
-  {
-    status: "Exploring",
-    title: "보험 시장의 정보 비대칭",
-    description:
-      "보험 설계사와 소비자 간 정보 격차로 인해 발생하는 구조적 비효율 문제를 탐구하고 있습니다.",
-    focus: [
-      "Decision Infrastructure",
-      "Recommendation System",
-      "Workflow Simplification",
-    ],
-  },
-  {
-    status: "Exploring",
-    title: "조직 내 지식 단절 문제",
-    description:
-      "대규모 조직에서 인수인계와 온보딩이 비효율적으로 이루어지는 이유를 지식 구조와 운영 시스템 관점에서 탐구하고 있습니다.",
-    focus: [
-      "Knowledge Mapping",
-      "Workflow Infrastructure",
-      "Operational Systems",
     ],
   },
   {
@@ -261,7 +238,7 @@ export default function FounderPortfolio() {
               <p>
                 미식축구 선수 경험과 스타트업 실무 경험을 통해, 엘리트 수준의 데이터 분석
                 시스템이 극소수에게만 접근 가능한 현실을 직접 체감했고, STECH를 창업해
-                스포츠 분석의 접근성을 확장하는 AI 시스템을 만들었습니다.
+                미식축구 분석의 접근성을 확장하는 AI 시스템을 만들었습니다.
               </p>
               <p>
                 Computer Vision, workflow automation, data infrastructure를 기반으로, 복잡한
