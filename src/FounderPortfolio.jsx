@@ -25,7 +25,7 @@ const skills = [
   },
   {
     category: "Tools",
-    items: ["Notion", "Figma", "데이터 분석 기초"],
+    items: ["Notion", "Figma", "Claude Code"],
   },
 ];
 
@@ -437,7 +437,7 @@ export default function FounderPortfolio() {
           <Section
             id="contact"
             title="Contact"
-            intro="채용, 포지션 제안, 커피챗 모두 환영합니다. 이메일을 주시면 하루 안에 답장드립니다."
+            intro="채용, 포지션 제안, 커피챗 모두 환영합니다."
           >
             <ul className="space-y-3">
               {contactLinks.map(([label, text, href]) => (
